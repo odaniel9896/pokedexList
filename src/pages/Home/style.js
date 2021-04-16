@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
   display:flex;
   align-items:center;
+  background-color: black;
   height: auto;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -26,11 +27,11 @@ export const Header = styled.header`
 `
 export const BodyPokedex = styled.div `
     width: 1400px;
-    background-color:red;
     height: auto;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
+    background-color: white;
     flex-wrap: wrap;
     justify-content: space-evenly;
 `;
@@ -40,8 +41,37 @@ export const PokemonCard = styled.div `
     border-radius: 20px;
     margin-bottom: 20px;
     margin-right: 30px;
-    background-color: cyan;
     margin-left: 30px;
     margin-top: 30px;
     border: 1px solid black;
+    padding-top: 20px;
+    box-shadow: 5px 10px;
+    align-items:center;    
+    display:flex;
+    flex-direction: column;
+
+`;
+export const PokemonImage = styled.div `
+    width: 90%;
+    height: 200px;
+    text-align: center;
+    img {
+        width: 90%;
+        height: 100%;
+    }
+`;
+export const PokemonName = styled.div`
+    width: 90%;
+    border-radius: 10px;
+    height: 50px;
+    margin-top: 10px;
+    align-items:center;
+    display:flex;
+    justify-content:center;
+
+    h2 {
+        font-size: 35px;
+        color: black;
+        font-family: sans-serif;
+    }
 `;
