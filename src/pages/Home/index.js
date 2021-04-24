@@ -30,14 +30,18 @@ function Home() {
     const [pokemon, setPokemon] = useState([]);
     const [pokemonImage, setPokemonImage] = useState([]);
     const [reload, setReload] = useState(null);
+    const [pokemonCount, setPokemonCount] = useState(0)
 
     const loadPokemons = async () => {
-        const response = await api.get("?limit=151&offset=1");
+        const response = await api.get("?limit=151&offset=0");
         setPokemon(response.data.results)
     };
 
+
+    
+
   
-    useEffect(() => {
+useEffect(() => {
         loadPokemons(true);
 
 
@@ -50,13 +54,13 @@ function Home() {
                 </h1>
             </Header>
             <BodyPokedex>
-                {pokemon.map((poke) => (
-                    <PokemonCard key={poke.id}>
+                {pokemon.map((poke, index) => (
+                    <PokemonCard key={index}>
                         <PokemonImage>
-                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png`} alt="charizard" />
+                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index +3 - 2}.png`} alt="charizard" />
                         </PokemonImage>
                         <PokemonName>
-                            <h2> #009 {poke.name}</h2>
+                            <h2> {poke.name}</h2>
                         </PokemonName>
                     </PokemonCard>
                 ))}
